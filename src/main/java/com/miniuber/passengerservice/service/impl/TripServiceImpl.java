@@ -1,5 +1,6 @@
 package com.miniuber.passengerservice.service.impl;
 
+import com.miniuber.passengerservice.dto.DriverRequest;
 import com.miniuber.passengerservice.dto.LocationDto;
 import com.miniuber.passengerservice.dto.TripRequest;
 import com.miniuber.passengerservice.dto.TripResponse;
@@ -45,4 +46,9 @@ public class TripServiceImpl implements TripService {
                 .toList();
     }
 
+    @Override
+    public void requestDriver(DriverRequest request) {
+        // kafka send message to other service
+
+    }
 }

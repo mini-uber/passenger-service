@@ -8,5 +8,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class DriverRequest {
+    private Long tripId;
     private Long driverId;
 }
