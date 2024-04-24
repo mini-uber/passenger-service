@@ -5,6 +5,7 @@ import com.miniuber.passengerservice.dto.LocationDto;
 import com.miniuber.passengerservice.dto.TripRequest;
 import com.miniuber.passengerservice.dto.TripResponse;
 import com.miniuber.passengerservice.entity.Trip;
+import com.miniuber.passengerservice.kafka.KafkaSender;
 import com.miniuber.passengerservice.mapper.TripMapper;
 import com.miniuber.passengerservice.repository.TripRepository;
 import com.miniuber.passengerservice.service.TripService;
@@ -19,6 +20,7 @@ import java.util.List;
 @Service
 public class TripServiceImpl implements TripService {
     private final TripRepository tripRepository;
+    private final KafkaSender kafkaSender;
 
     @Override
     public TripResponse createTrip(TripRequest request) {
@@ -49,6 +51,7 @@ public class TripServiceImpl implements TripService {
     @Override
     public void requestDriver(DriverRequest request) {
         // kafka send message to other service
+        kafkaSender.sendMessage("driver-request", request.toString());
 
     }
 }
