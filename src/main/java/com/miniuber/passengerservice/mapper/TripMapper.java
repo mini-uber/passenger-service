@@ -23,10 +23,10 @@ public class TripMapper {
         return Trip
                 .builder()
                 .passengerId(request.getPassengerId())
-                .pickupLat(request.getPickupLocationDto().getLat())
-                .pickupLon(request.getPickupLocationDto().getLon())
-                .destinationLat(request.getDestinationLocationDto().getLat())
-                .destinationLon(request.getDestinationLocationDto().getLon())
+                .pickupLat(request.getPickupLocation().getLat())
+                .pickupLon(request.getPickupLocation().getLon())
+                .destinationLat(request.getDestinationLocation().getLat())
+                .destinationLon(request.getDestinationLocation().getLon())
                 .build();
     }
 

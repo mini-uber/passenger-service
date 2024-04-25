@@ -50,8 +50,6 @@ public class TripServiceImpl implements TripService {
 
     @Override
     public void requestDriver(DriverRequest request) {
-        // kafka send message to other service
         kafkaSender.sendMessage("driver-request", request.toString());
-
     }
 }

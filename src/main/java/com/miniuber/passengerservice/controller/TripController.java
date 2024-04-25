@@ -17,7 +17,7 @@ import java.util.List;
 public class TripController {
     private final TripService service;
 
-    @PostMapping
+    @PostMapping("trip")
     ResponseEntity<TripResponse> createTrip(@RequestBody TripRequest request) {
         return ResponseEntity.ok(service.createTrip(request));
     }

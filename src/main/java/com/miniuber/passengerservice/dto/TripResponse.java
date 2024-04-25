@@ -2,7 +2,6 @@ package com.miniuber.passengerservice.dto;
 
 import com.miniuber.passengerservice.util.TripStatus;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
